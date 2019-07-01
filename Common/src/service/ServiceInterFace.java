@@ -5,10 +5,14 @@
  */
 package service;
 
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+import observer.Subject;
+
 /**
  *
  * @author madhusha
  */
-public interface ServiceInterFace {
-    
+public interface ServiceInterFace extends Remote,Subject{
+    public void check(String Message)throws RemoteException;
 }

@@ -5,10 +5,13 @@
  */
 package observer;
 
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
 /**
  *
  * @author madhusha
  */
-public interface Observer {
-    
+public interface Observer extends Remote{
+    public void update(String Message)throws RemoteException;
 }
