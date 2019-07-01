@@ -24,7 +24,7 @@ public class DBConnection {
         DriverManager.getConnection("jdbc:mysql://localhost/3306/pos1", "root", "1234");
     }
 
-    public static DBConnection getDBConnection() throws ClassNotFoundException, SQLException {
+    public static DBConnection getInstance() throws ClassNotFoundException, SQLException {
         if (dBConnection == null) {
             dBConnection = new DBConnection();
         }
