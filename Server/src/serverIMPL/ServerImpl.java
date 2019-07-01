@@ -21,6 +21,9 @@ public class ServerImpl extends UnicastRemoteObject implements ServiceInterFace 
 
     private static ArrayList<Observer> observers = new ArrayList<>();
 
+    public ServerImpl()throws Exception{
+    }
+
     @Override
     public String check(String message) throws RemoteException {
         System.out.println(message);

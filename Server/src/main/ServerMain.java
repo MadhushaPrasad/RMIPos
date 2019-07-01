@@ -8,6 +8,8 @@ package main;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import serverIMPL.ServerImpl;
 
 /**
@@ -15,9 +17,14 @@ import serverIMPL.ServerImpl;
  * @author madhusha
  */
 public class ServerMain {
+
     public static void main(String[] args) throws RemoteException {
-        Registry createRegistry = LocateRegistry.createRegistry(5050);
-        createRegistry.rebind("POS1", new ServerImpl());
+        try {
+            Registry createRegistry = LocateRegistry.createRegistry(5050);
+            createRegistry.rebind("POS", new ServerImpl());
+        } catch (Exception ex) {
+            Logger.getLogger(ServerMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
         System.out.println("Server Start");
     }
 }
