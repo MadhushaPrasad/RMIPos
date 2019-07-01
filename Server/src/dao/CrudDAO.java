@@ -9,6 +9,6 @@ package dao;
  *
  * @author madhusha
  */
-public class CrudDAO {
+public interface CrudDAO<C , ID> extends SuperDAO{
     
 }

@@ -9,6 +9,6 @@ package bo;
  *
  * @author madhusha
  */
-public class SuperBO {
+public interface SuperBO {
     
 }

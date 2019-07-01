@@ -15,6 +15,7 @@ import java.sql.SQLException;
  * @author madhusha
  */
 public class DBConnection {
+
     private static DBConnection dBConnection;
     private Connection connection;
 
@@ -22,16 +23,15 @@ public class DBConnection {
         Class.forName("com.mysql.jdbc.Driver");
         DriverManager.getConnection("jdbc:mysql://localhost/3306/pos1", "root", "1234");
     }
-    public static DBConnection getDBConnection() throws ClassNotFoundException, SQLException{
-        if(dBConnection == null){
+
+    public static DBConnection getDBConnection() throws ClassNotFoundException, SQLException {
+        if (dBConnection == null) {
             dBConnection = new DBConnection();
         }
         return dBConnection;
     }
-    
-    public Connection getConnection(){
+
+    public Connection getConnection() {
         return connection;
     }
-    
-    
 }

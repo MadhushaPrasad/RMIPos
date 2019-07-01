@@ -9,6 +9,6 @@ package dao;
  *
  * @author madhusha
  */
-public class SuperDAO {
+public interface SuperDAO {
     
 }
