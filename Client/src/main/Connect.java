@@ -7,7 +7,7 @@ package main;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
-import java.rmi.NotBoundException;ent 
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import service.ServiceInterFace;
 
