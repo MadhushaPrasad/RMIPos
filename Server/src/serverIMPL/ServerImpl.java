@@ -17,7 +17,8 @@ import service.ServiceInterFace;
  *
  * @author madhusha
  */
-public class ServerImpl extends UnicastRemoteObject implements ServiceInterFace{
+public class ServerImpl extends UnicastRemoteObject implements ServiceInterFace {
+
     private static ArrayList<Observer> observers = new ArrayList<>();
 
     @Override
@@ -25,7 +26,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServiceInterFace{
         System.out.println(message);
         notifyALLObservers(message);
         return message;
-        
+
     }
 
     @Override
@@ -42,7 +43,7 @@ public class ServerImpl extends UnicastRemoteObject implements ServiceInterFace{
     public void notifyALLObservers(String message) throws RemoteException {
         for (Observer observer : observers) {
             new Thread(
-            new Runnable() {
+                    new Runnable() {
                 @Override
                 public void run() {
                     try {
@@ -55,5 +56,5 @@ public class ServerImpl extends UnicastRemoteObject implements ServiceInterFace{
             ).start();
         }
     }
-    
+
 }
