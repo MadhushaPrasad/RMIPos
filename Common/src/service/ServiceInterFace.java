@@ -14,5 +14,5 @@ import observer.Subject;
  * @author madhusha
  */
 public interface ServiceInterFace extends Remote,Subject{
-    public void check(String Message)throws RemoteException;
+    public String check(String message)throws RemoteException;
 }
