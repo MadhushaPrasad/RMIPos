@@ -5,10 +5,15 @@
  */
 package view;
 
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import service.ServiceInterFace;
 
 
 
@@ -18,14 +23,21 @@ import java.util.logging.Logger;
  * @author madhusha
  */
 public class View extends javax.swing.JFrame implements observer.Observer{
-    /**
+     /**
      * Creates new form View
      */
     public View() throws RemoteException {
-        initComponents();
-        
-        UnicastRemoteObject.exportObject(this, 5050);
-        
+        try {
+            initComponents();
+            
+            UnicastRemoteObject.exportObject(this, 0);
+            ServiceInterFace serviceInterFace = (ServiceInterFace) Naming.lookup("rmi://localhost:5050/POS");
+            serviceInterFace.addObserver(this);
+        } catch (NotBoundException ex) {
+            Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

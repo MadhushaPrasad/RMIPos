@@ -7,7 +7,6 @@ package db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.JDBCType;
 import java.sql.SQLException;
 
 /**
@@ -21,7 +20,7 @@ public class DBConnection {
 
     private DBConnection() throws ClassNotFoundException, SQLException, SQLException {
         Class.forName("com.mysql.jdbc.Driver");
-        DriverManager.getConnection("jdbc:mysql://localhost/3306/pos1", "root", "1234");
+        DriverManager.getConnection("jdbc:mysql://localhost:3306/pos1", "root", "1234");
     }
 
     public static DBConnection getInstance() throws ClassNotFoundException, SQLException {

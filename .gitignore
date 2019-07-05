@@ -3,3 +3,5 @@
 /Common/build/
 /Server/build/
 /Client/nbproject/private/
+/Client/build/
+/DBConnection/nbproject/private/

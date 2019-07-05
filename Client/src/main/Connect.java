@@ -17,12 +17,9 @@ import service.ServiceInterFace;
  *
  * @author madhusha
  */
-public class Connect{
+public class Connect {
     public static void main(String[] args) throws NotBoundException, MalformedURLException, RemoteException {
-        ServiceInterFace lookup = (ServiceInterFace) Naming.lookup("rmi:localhost:5050/POS1");
+        ServiceInterFace lookup = (ServiceInterFace) Naming.lookup("rmi://localhost:5050/POS");
         System.out.println("Hello Im Client");
-    }
-
-    
-    
+    } 
 }

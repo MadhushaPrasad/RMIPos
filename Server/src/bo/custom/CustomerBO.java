@@ -3,15 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao.custom;
-
-import dao.CrudDAO;
-import entity.Customer;
+package bo.custom;
 
 /**
  *
  * @author madhusha
  */
-public interface CustomerDAO extends CrudDAO<Customer, String>{
+public interface CustomerBO {
     
 }
